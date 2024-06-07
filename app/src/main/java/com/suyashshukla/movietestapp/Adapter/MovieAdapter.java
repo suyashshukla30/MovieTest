@@ -33,8 +33,7 @@ public class MovieAdapter extends RecyclerView.Adapter<MovieAdapter.ViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull MovieAdapter.ViewHolder holder, int position) {
         MovieEntity movie = movie_list.get(position);
-
-        // Set movie poster image using Glide or Picasso (example with Glide)
+        //If there is no net or no image a default image will show up.
         Glide.with(holder.itemView.getContext())
                 .load(movie.poster_url)  
                 .placeholder(R.drawable.ic_launcher_foreground)

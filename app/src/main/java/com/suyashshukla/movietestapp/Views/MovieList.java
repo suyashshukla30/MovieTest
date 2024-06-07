@@ -58,7 +58,8 @@ public class MovieList extends AppCompatActivity {
                 rv_movie_details.setLayoutManager(new LinearLayoutManager(MovieList.this));
             } else {
                 if (isNetworkConnected()) {
-                    Toast.makeText(MovieList.this, "Data getting saved in Room...please wait", Toast.LENGTH_LONG).show();
+                    Toast.makeText(MovieList.this, "Data getting saved in Room if fetched from server...please wait", Toast.LENGTH_LONG).show();
+                    // To do continous fetching from room.
                     new GetMoviesTask().execute();
                 } else {
                     Toast.makeText(MovieList.this, "App never connected to server, Kindly connect and restart app", Toast.LENGTH_LONG).show();
